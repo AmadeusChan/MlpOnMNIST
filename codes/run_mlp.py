@@ -7,6 +7,7 @@ from load_data import load_mnist_2d
 
 import json
 import sys
+import os
 
 def getNetwork():
 	'''
@@ -69,11 +70,15 @@ config = {
 }
 '''
 
-outf = file("accuracy.txt", "w")
+os.system("rm accuracy.txt")
+os.system("touch accuracy.txt")
 
 for name, model, config in getNetwork():
 	
+	outf = file("accuracy.txt", "a")
 	outf.write('Network Name: ' + name + '\n')
+	outf.close()
+
 	for epoch in range(config['max_epoch']):
     		LOG_INFO('Network %s: Training @ %d epoch...' % (name, epoch))
    		train_net(model, loss, config, train_data, train_label, config['batch_size'], config['disp_freq'])
@@ -81,7 +86,12 @@ for name, model, config in getNetwork():
 		if epoch % config['test_epoch'] == 0:
         		LOG_INFO('Network %s: Testing @ %d epoch...' % (name, epoch))
         		accu = test_net(model, loss, test_data, test_label, config['batch_size'])
-			outf.write(str(epoch) + ' ' + str(accu) + '\n')
-	outf.write('\n')
 
-outf.close()
+			outf = file("accuracy.txt", "a")
+			outf.write(str(epoch) + ' ' + str(accu) + '\n')
+			outf.close()
+
+	outf = file("accuracy.txt", "a")
+	outf.write('\n')
+	outf.close()
+
