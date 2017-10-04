@@ -1,6 +1,6 @@
 from network import Network
 from utils import LOG_INFO
-from layers import Relu, Sigmoid, Linear
+from layers import Relu, Sigmoid, Linear, Softmax
 from loss import EuclideanLoss
 from solve_net import train_net, test_net
 from load_data import load_mnist_2d
@@ -32,6 +32,8 @@ def getNetwork():
 				model.add(Relu(layer['name']))
 			if layer['type'] == 'Sigmoid':
 				model.add(Sigmoid(layer['name']))
+			if layer['type'] == 'Softmax':
+				model.add(Softmax(layer['name']))
 		yield network['name'], model, config
 
 train_data, test_data, train_label, test_label = load_mnist_2d('data')
@@ -69,13 +71,16 @@ config = {
     'test_epoch': 1
 }
 '''
+acc_file = "accuracy.txt"
+if len(sys.argv)>2:
+	acc_file = sys.argv[2]
 
-os.system("rm accuracy.txt")
-os.system("touch accuracy.txt")
+os.system("rm " + acc_file)
+os.system("touch " + acc_file)
 
 for name, model, config in getNetwork():
 	
-	outf = file("accuracy.txt", "a")
+	outf = file(acc_file, "a")
 	outf.write('Network Name: ' + name + '\n')
 	outf.close()
 
@@ -87,11 +92,11 @@ for name, model, config in getNetwork():
         		LOG_INFO('Network %s: Testing @ %d epoch...' % (name, epoch))
         		accu = test_net(model, loss, test_data, test_label, config['batch_size'])
 
-			outf = file("accuracy.txt", "a")
+			outf = file(acc_file, "a")
 			outf.write(str(epoch) + ' ' + str(accu) + '\n')
 			outf.close()
 
-	outf = file("accuracy.txt", "a")
+	outf = file(acc_file, "a")
 	outf.write('\n')
 	outf.close()
 

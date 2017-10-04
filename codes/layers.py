@@ -58,6 +58,32 @@ class Sigmoid(Layer):
 	return grad_input
         # pass
 
+# definition of softmax layer
+class Softmax(Layer):
+	def __init__(self, name):
+		super(Softmax, self).__init__(name)
+	
+	def forward(self, input):
+		temp = np.exp(input)
+		N = input.shape[0]
+		M = input.shape[1]
+		output = np.ndarray(shape = (N, M))
+		for n in range(N):
+			sum = np.sum(temp[n])
+			output[n] = temp[n] / sum
+		self._saved_for_backward(output)
+		return output
+	
+	def backward(self, grad_out):
+		N = grad_out.shape[0]
+		M = grad_out.shape[1]
+		grad_in = np.ndarray(shape = (N, M))
+		for n in range(N):
+			for m in range(M):
+				grad_in[n][m] = 0
+				for j in range(M):
+					grad_in[n][m] += (grad_out[n][j] * ((m == j) - grad_out[n][m]))
+		return grad_in
 
 class Linear(Layer):
     def __init__(self, name, in_num, out_num, init_std):
