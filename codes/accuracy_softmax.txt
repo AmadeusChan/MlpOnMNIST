@@ -1,4 +1,4 @@
-Network Name: mlp
+Network Name: softmax regression
 0 0.9043
 1 0.9092
 2 0.9152
