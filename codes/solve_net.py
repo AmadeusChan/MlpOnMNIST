@@ -12,7 +12,7 @@ def data_iterator(x, y, batch_size, shuffle=True):
         yield x[indx[start_idx: end_idx]], y[indx[start_idx: end_idx]]
 
 
-def train_net(model, loss, config, inputs, labels, batch_size, disp_freq):
+def train_net(model, loss, config, inputs, labels, batch_size, disp_freq, loss_file):
 
     iter_counter = 0
     loss_list = []
@@ -39,6 +39,10 @@ def train_net(model, loss, config, inputs, labels, batch_size, disp_freq):
         acc_value = calculate_acc(output, label)
         loss_list.append(loss_value)
         acc_list.append(acc_value)
+
+	outf = file(loss_file, "a")
+	outf.write(str(loss_value) + ' ' + str(acc_value) + '\n')
+	outf.close()
 
         if iter_counter % disp_freq == 0:
             msg = '  Training iter %d, batch loss %.4f, batch acc %.4f' % (iter_counter, np.mean(loss_list), np.mean(acc_list))

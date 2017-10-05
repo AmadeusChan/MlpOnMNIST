@@ -1,6 +1,27 @@
 [
 
 	{
+		"name": "mlp", 
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":1024, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":1024, "out_num":128, "std":0.01},
+			{"type":"Relu", "name":"af2"}, 
+			{"type":"Linear", "name":"fc3", "in_num":128, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.001,
+			"weight_decay":0, 
+			"momentum":0,
+			"batch_size":100,
+			"max_epoch":100, 
+			"disp_freq":50, 
+			"test_epoch":1
+		}
+	},
+
+
+	{
 		"name": "simple mlp", 
 		"model": [
 			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":100, "std":0.01},
@@ -50,6 +71,326 @@
 			"weight_decay":0, 
 			"momentum":0,
 			"batch_size":100,
+			"max_epoch":100, 
+			"disp_freq":50, 
+			"test_epoch":1
+		}
+	},
+
+	{
+		"name": "deeper mlp 1 lr=0.002", 
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
+			{"type":"Relu", "name":"af2"}, 
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.002,
+			"weight_decay":0, 
+			"momentum":0,
+			"batch_size":100,
+			"max_epoch":100, 
+			"disp_freq":50, 
+			"test_epoch":1
+		}
+	},
+
+	{
+		"name": "deeper mlp 1 lr=0.004", 
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
+			{"type":"Relu", "name":"af2"}, 
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.004,
+			"weight_decay":0, 
+			"momentum":0,
+			"batch_size":100,
+			"max_epoch":100, 
+			"disp_freq":50, 
+			"test_epoch":1
+		}
+	},
+
+	{
+		"name": "deeper mlp 1 lr=0.008", 
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
+			{"type":"Relu", "name":"af2"}, 
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.008,
+			"weight_decay":0, 
+			"momentum":0,
+			"batch_size":100,
+			"max_epoch":100, 
+			"disp_freq":50, 
+			"test_epoch":1
+		}
+	},
+
+	{
+		"name": "deeper mlp 1 lr=0.0005", 
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
+			{"type":"Relu", "name":"af2"}, 
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.0005,
+			"weight_decay":0, 
+			"momentum":0,
+			"batch_size":100,
+			"max_epoch":100, 
+			"disp_freq":50, 
+			"test_epoch":1
+		}
+	},
+
+	{
+		"name": "deeper mlp 1 lr=0.00025", 
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
+			{"type":"Relu", "name":"af2"}, 
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.00025,
+			"weight_decay":0, 
+			"momentum":0,
+			"batch_size":100,
+			"max_epoch":100, 
+			"disp_freq":50, 
+			"test_epoch":1
+		}
+	},
+
+	{
+		"name": "deeper mlp 1 lr=0.000125", 
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
+			{"type":"Relu", "name":"af2"}, 
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.000125,
+			"weight_decay":0, 
+			"momentum":0,
+			"batch_size":100,
+			"max_epoch":100, 
+			"disp_freq":50, 
+			"test_epoch":1
+		}
+	},
+
+	{
+		"name": "deeper mlp 1 wd=0.1", 
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
+			{"type":"Relu", "name":"af2"}, 
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.001,
+			"weight_decay":0.1, 
+			"momentum":0,
+			"batch_size":100,
+			"max_epoch":100, 
+			"disp_freq":50, 
+			"test_epoch":1
+		}
+	},
+
+	{
+		"name": "deeper mlp 1 wd=0.01", 
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
+			{"type":"Relu", "name":"af2"}, 
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.001,
+			"weight_decay":0.01, 
+			"momentum":0,
+			"batch_size":100,
+			"max_epoch":100, 
+			"disp_freq":50, 
+			"test_epoch":1
+		}
+	},
+
+	{
+		"name": "deeper mlp 1 wd=0.001", 
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
+			{"type":"Relu", "name":"af2"}, 
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.001,
+			"weight_decay":0.001, 
+			"momentum":0,
+			"batch_size":100,
+			"max_epoch":100, 
+			"disp_freq":50, 
+			"test_epoch":1
+		}
+	},
+
+	{
+		"name": "deeper mlp 1 mm=0.1", 
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
+			{"type":"Relu", "name":"af2"}, 
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.001,
+			"weight_decay":0, 
+			"momentum":0.1,
+			"batch_size":100,
+			"max_epoch":100, 
+			"disp_freq":50, 
+			"test_epoch":1
+		}
+	},
+
+	{
+		"name": "deeper mlp 1 mm=0.01", 
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
+			{"type":"Relu", "name":"af2"}, 
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.001,
+			"weight_decay":0, 
+			"momentum":0.01,
+			"batch_size":100,
+			"max_epoch":100, 
+			"disp_freq":50, 
+			"test_epoch":1
+		}
+	},
+
+	{
+		"name": "deeper mlp 1 mm=0.001", 
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
+			{"type":"Relu", "name":"af2"}, 
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.001,
+			"weight_decay":0, 
+			"momentum":0.001,
+			"batch_size":100,
+			"max_epoch":100, 
+			"disp_freq":50, 
+			"test_epoch":1
+		}
+	},
+
+	{
+		"name": "deeper mlp 1 bs=10", 
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
+			{"type":"Relu", "name":"af2"}, 
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.001,
+			"weight_decay":0, 
+			"momentum":0,
+			"batch_size":10,
+			"max_epoch":100, 
+			"disp_freq":50, 
+			"test_epoch":1
+		}
+	},
+
+	{
+		"name": "deeper mlp 1 bs=20", 
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
+			{"type":"Relu", "name":"af2"}, 
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.001,
+			"weight_decay":0, 
+			"momentum":0,
+			"batch_size":20,
+			"max_epoch":100, 
+			"disp_freq":50, 
+			"test_epoch":1
+		}
+	},
+
+	{
+		"name": "deeper mlp 1 bs=50", 
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
+			{"type":"Relu", "name":"af2"}, 
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.001,
+			"weight_decay":0, 
+			"momentum":0,
+			"batch_size":50,
+			"max_epoch":100, 
+			"disp_freq":50, 
+			"test_epoch":1
+		}
+	},
+
+	{
+		"name": "deeper mlp 1 bs=200", 
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
+			{"type":"Relu", "name":"af2"}, 
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.001,
+			"weight_decay":0, 
+			"momentum":0,
+			"batch_size":200,
 			"max_epoch":100, 
 			"disp_freq":50, 
 			"test_epoch":1
