@@ -1,0 +1,11 @@
+Network Name: deeper mlp 1 wd=0.010
+
+Network Name: deeper mlp 1 wd=0.011
+
+Network Name: deeper mlp 1 wd=0.012
+
+Network Name: deeper mlp 1 wd=0.013
+
+Network Name: deeper mlp 1 wd=0.014
+
+Network Name: deeper mlp 1 wd=0.015
