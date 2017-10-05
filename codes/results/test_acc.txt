@@ -1,1 +1,1 @@
-Network Name: 2-layer mlp with relu
+Network Name: 2-layer mlp with sigmoid
