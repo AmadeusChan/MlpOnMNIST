@@ -1,0 +1,3 @@
+Network Name: 6-layer mlp
+0 0.9434
+1 0.9639
