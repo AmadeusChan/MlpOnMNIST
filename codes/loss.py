@@ -17,3 +17,15 @@ class EuclideanLoss(object):
         '''Your codes here'''
 	return input - target
         # pass
+
+class CrossEntropyLoss(object):
+	esp = 10e-10
+
+	def __init__(self, name):
+		self.name = name
+	
+	def forward(self, input, target):
+		return np.sum(-target * np.log(input))
+	
+	def backward(self, input, target):
+		return -target / (input)

@@ -1,7 +1,7 @@
 from network import Network
 from utils import LOG_INFO
 from layers import Relu, Sigmoid, Linear, Softmax
-from loss import EuclideanLoss
+from loss import EuclideanLoss, CrossEntropyLoss
 from solve_net import train_net, test_net
 from load_data import load_mnist_2d
 
@@ -34,14 +34,18 @@ def getNetwork():
 				model.add(Sigmoid(layer['name']))
 			if layer['type'] == 'Softmax':
 				model.add(Softmax(layer['name']))
-		yield network['name'], model, config
+		loss = EuclideanLoss('loss')
+		if 'loss' in config:
+			if config['loss'] == 'CrossEntropyLoss':
+				loss = CrossEntropyLoss('loss')
+		yield network['name'], model, config, loss
 
 train_data, test_data, train_label, test_label = load_mnist_2d('data')
 
 # Your model defintion here
 # You should explore different model architecture
 
-# Now the networks are defined in structure.json in json format
+# ATTENTION: Now the networks are defined in structure.json (or some other json file) in json format
 
 '''
 model = Network()
@@ -51,8 +55,6 @@ model.add(Linear('fc2', 196, 28, 0.01))
 model.add(Relu('af2'))
 model.add(Linear('fc3', 28, 10, 0.01))
 '''
-
-loss = EuclideanLoss(name='loss')
 
 # Training configuration
 # You should adjust these hyperparameters
@@ -71,22 +73,33 @@ config = {
     'test_epoch': 1
 }
 '''
-acc_file = "accuracy.txt"
+acc_file = "results/accuracy.txt"
+loss_file = "results/loss.txt"
 if len(sys.argv)>2:
 	acc_file = sys.argv[2]
+if len(sys.argv)>3:
+	loss_file = sys.argv[3]
 
 os.system("rm " + acc_file)
 os.system("touch " + acc_file)
+os.system("rm " + loss_file)
+os.system("touch " + loss_file)
 
-for name, model, config in getNetwork():
+for name, model, config, loss in getNetwork():
+	
+	print type(loss)
 	
 	outf = file(acc_file, "a")
 	outf.write('Network Name: ' + name + '\n')
 	outf.close()
 
+	outf = file(loss_file, "a")
+	outf.write('Network Name: ' + name + '\n')
+	outf.close()
+
 	for epoch in range(config['max_epoch']):
     		LOG_INFO('Network %s: Training @ %d epoch...' % (name, epoch))
-   		train_net(model, loss, config, train_data, train_label, config['batch_size'], config['disp_freq'])
+   		train_net(model, loss, config, train_data, train_label, config['batch_size'], config['disp_freq'], loss_file)
 
 		if epoch % config['test_epoch'] == 0:
         		LOG_INFO('Network %s: Testing @ %d epoch...' % (name, epoch))
@@ -100,3 +113,6 @@ for name, model, config in getNetwork():
 	outf.write('\n')
 	outf.close()
 
+	outf = file(loss_file, "a")
+	outf.write('\n')
+	outf.close()

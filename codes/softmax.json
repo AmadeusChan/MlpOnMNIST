@@ -1,6 +1,6 @@
 [
 	{
-		"name": "mlp", 
+		"name": "softmax regression", 
 		"model": [
 			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":10, "std":0.01},
 			{"type":"Softmax", "name":"af1"}
