@@ -9,6 +9,9 @@ import json
 import sys
 import os
 
+import numpy as np
+from scipy import misc
+
 def getNetwork():
 	'''
 	to obtain network structure from specified file
@@ -41,6 +44,19 @@ def getNetwork():
 		yield network['name'], model, config, loss
 
 train_data, test_data, train_label, test_label = load_mnist_2d('data')
+N = train_data.shape[0]
+
+train_data = np.append(train_data, train_data, axis=0) 
+for n in range(N, 2*N): 
+	image = np.reshape(train_data[n], (28, 28))
+
+	# train_data[n-N] = np.reshape( misc.imrotate(image, 0), (1, 784) ) / 255.0
+	image = misc.imrotate(image, 10*np.random.randn()) / 255.0
+	train_data[n] = np.reshape(image, (1, 784))
+
+
+train_label = np.append(train_label, train_label, axis=0)
+print train_data.shape
 
 # Your model defintion here
 # You should explore different model architecture
