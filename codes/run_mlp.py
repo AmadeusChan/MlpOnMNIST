@@ -11,6 +11,7 @@ import os
 
 import numpy as np
 from scipy import misc
+from scipy import ndimage
 
 def getNetwork():
 	'''
@@ -46,15 +47,21 @@ def getNetwork():
 train_data, test_data, train_label, test_label = load_mnist_2d('data')
 N = train_data.shape[0]
 
+# data expanding 
 train_data = np.append(train_data, train_data, axis=0) 
 train_data = np.append(train_data, train_data, axis=0) 
-for n in range(N, 4*N): 
+for n in range(N, 2*N): 
 	image = np.reshape(train_data[n], (28, 28))
-
-	# train_data[n-N] = np.reshape( misc.imrotate(image, 0), (1, 784) ) / 255.0
 	image = misc.imrotate(image, 10*np.random.randn()) / 255.0
 	train_data[n] = np.reshape(image, (1, 784))
 
+for n in range(2*N, 3*N):
+	train_data[n] = train_data[n] + np.random.randn() 
+
+for n in range(3*N, 4*N): 
+	image = np.reshape(train_data[n], (28, 28))
+	image = ndimage.shift(image + 0.5, (np.random.randn() * 3, np.random.randn() * 3) )
+	train_data[n] = np.reshape(image, (1, 784))
 
 train_label = np.append(train_label, train_label, axis=0)
 train_label = np.append(train_label, train_label, axis=0)
