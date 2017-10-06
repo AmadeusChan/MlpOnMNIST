@@ -1,0 +1,5 @@
+Network Name: 2-layer mlp with relu
+0 0.9532
+1 0.9698
+2 0.9788
+3 0.9806

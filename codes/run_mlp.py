@@ -60,7 +60,7 @@ for n in range(2*N, 3*N):
 
 for n in range(3*N, 4*N): 
 	image = np.reshape(train_data[n], (28, 28))
-	image = ndimage.shift(image + 0.5, (np.random.randn() * 3, np.random.randn() * 3) )
+	image = ndimage.shift(misc.imrotate(image, np.random.randn()), (np.random.randn(), np.random.randn()) ) / 255.0
 	train_data[n] = np.reshape(image, (1, 784))
 
 train_label = np.append(train_label, train_label, axis=0)
