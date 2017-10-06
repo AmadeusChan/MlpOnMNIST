@@ -1,0 +1,23 @@
+[
+	{
+		"name": "3-layer mlp with relu",
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":196, "std":0.01},
+			{"type":"Relu", "name":"af2"},
+			{"type":"Linear", "name":"fc3", "in_num":196, "out_num":98, "std":0.01}, 
+			{"type":"Relu", "name":"af3"},
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.0003,
+			"weight_decay":0.01,
+			"momentum":0,
+			"batch_size":100,
+			"max_epoch":500,
+			"disp_freq":50,
+			"test_epoch":1
+		}
+	}
+]
