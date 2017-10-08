@@ -52,9 +52,10 @@ N = train_data.shape[0]
 temp_data = train_data.copy()
 temp_label = train_label.copy()
 
-train_data = np.append(train_data, train_data, axis=0) 
-train_data = np.append(train_data, train_data, axis=0) 
-train_data = np.append(train_data, temp_data, axis=0)
+for i in range(3):
+	train_data = np.append(train_data, temp_data, axis=0)
+	train_label = np.append(train_label, temp_label, axis=0)
+
 for n in range(N, 2*N): 
 	image = np.reshape(train_data[n], (28, 28))
 	image = misc.imrotate(image, 10*np.random.randn()) / 255.0
@@ -68,12 +69,6 @@ for n in range(3*N, 4*N):
 	image = ndimage.shift(misc.imrotate(image, np.random.randn()), (np.random.randn() * 2, np.random.randn() * 2) ) / 255.0
 	train_data[n] = np.reshape(image, (1, 784))
 
-for n in range(4*N, 5*N):
-	train_data[n] = train_data[n] + np.random.randn(train_data[n].shape) 
-
-train_label = np.append(train_label, train_label, axis=0)
-train_label = np.append(train_label, train_label, axis=0)
-train_label = np.append(train_label, temp_label, axis=0)
 print train_data.shape
 
 # Your model defintion here
