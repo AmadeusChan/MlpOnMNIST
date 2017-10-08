@@ -18,7 +18,7 @@ def getNetwork():
 	'''
 	to obtain network structure from specified file
 	'''
-	file_name = "structure.json"
+	file_name = "models/structure.json"
 	if len(sys.argv)>1:
 		file_name = sys.argv[1]
 	f = file(file_name, "r")

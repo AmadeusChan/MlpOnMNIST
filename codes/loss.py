@@ -10,12 +10,12 @@ class EuclideanLoss(object):
         '''Your codes here'''
 	temp = input - target
 	# print "input =", input
-	return np.sum(temp * temp) / 2
+	return np.sum(temp * temp) / 2 / target.shape[0]
         # pass
 
     def backward(self, input, target):
         '''Your codes here'''
-	return input - target
+	return (input - target) / target.shape[0]
         # pass
 
 class CrossEntropyLoss(object):

@@ -9,7 +9,7 @@
 			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.005, 
 			"momentum":0,
 			"batch_size":100,
@@ -29,7 +29,7 @@
 			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.006, 
 			"momentum":0,
 			"batch_size":100,
@@ -49,7 +49,7 @@
 			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.007, 
 			"momentum":0,
 			"batch_size":100,
@@ -69,7 +69,7 @@
 			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.008, 
 			"momentum":0,
 			"batch_size":100,
@@ -89,7 +89,7 @@
 			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.009, 
 			"momentum":0,
 			"batch_size":100,
@@ -109,7 +109,7 @@
 			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.01, 
 			"momentum":0,
 			"batch_size":100,
@@ -129,7 +129,7 @@
 			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.011, 
 			"momentum":0,
 			"batch_size":100,
@@ -149,7 +149,7 @@
 			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.012, 
 			"momentum":0,
 			"batch_size":100,
@@ -169,7 +169,7 @@
 			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.013, 
 			"momentum":0,
 			"batch_size":100,
@@ -189,7 +189,7 @@
 			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.014, 
 			"momentum":0,
 			"batch_size":100,
@@ -209,7 +209,7 @@
 			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.015, 
 			"momentum":0,
 			"batch_size":100,
@@ -229,7 +229,7 @@
 			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.016, 
 			"momentum":0,
 			"batch_size":100,
@@ -249,7 +249,7 @@
 			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.017, 
 			"momentum":0,
 			"batch_size":100,
@@ -269,7 +269,7 @@
 			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.018, 
 			"momentum":0,
 			"batch_size":100,
@@ -289,7 +289,7 @@
 			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.019, 
 			"momentum":0,
 			"batch_size":100,
@@ -309,7 +309,7 @@
 			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.020, 
 			"momentum":0,
 			"batch_size":100,
