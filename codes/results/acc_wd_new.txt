@@ -1,0 +1,1 @@
+Network Name: deeper mlp 1 wd=0

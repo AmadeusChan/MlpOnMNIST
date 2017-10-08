@@ -9,6 +9,7 @@ import json
 import sys
 import os
 import copy
+import time
 
 import numpy as np
 from scipy import misc
@@ -138,7 +139,7 @@ for name, model, config, loss in getNetwork():
         		accu = test_net(model, loss, test_data, test_label, config['batch_size'])
 
 			outf = file(acc_file, "a")
-			outf.write(str(epoch) + ' ' + str(accu) + '\n')
+			outf.write(str(epoch) + ' ' + str(accu) + ' ' + str(time.time()) + '\n')
 			outf.close()
 
 	outf = file(acc_file, "a")

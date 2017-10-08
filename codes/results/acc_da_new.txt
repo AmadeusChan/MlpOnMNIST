@@ -1,0 +1,4 @@
+Network Name: 3-layer mlp with relu
+0 0.9063 1507477210.53
+Network Name: 3-layer mlp with relu
+0 0.9407 1507477431.14

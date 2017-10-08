@@ -1,5 +1,25 @@
 [
 	{
+		"name": "2-layer mlp with relu lr=0.0005",
+		"model": [
+			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
+			{"type":"Relu", "name":"af1"},
+			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
+			{"type":"Relu", "name":"af2"},
+			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
+		],
+		"config": {
+			"learning_rate":0.0005,
+			"weight_decay":0.0001,
+			"momentum":0,
+			"batch_size":100,
+			"max_epoch":200,
+			"disp_freq":50,
+			"test_epoch":1
+		}
+	}, 
+
+	{
 		"name": "2-layer mlp with relu lr=0.001",
 		"model": [
 			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
@@ -10,7 +30,7 @@
 		],
 		"config": {
 			"learning_rate":0.001,
-			"weight_decay":0.01,
+			"weight_decay":0.0001,
 			"momentum":0,
 			"batch_size":100,
 			"max_epoch":200,
@@ -30,7 +50,7 @@
 		],
 		"config": {
 			"learning_rate":0.01,
-			"weight_decay":0.01,
+			"weight_decay":0.0001,
 			"momentum":0,
 			"batch_size":100,
 			"max_epoch":200,
@@ -50,7 +70,7 @@
 		],
 		"config": {
 			"learning_rate":0.1,
-			"weight_decay":0.01,
+			"weight_decay":0.0001,
 			"momentum":0,
 			"batch_size":100,
 			"max_epoch":200,
@@ -70,27 +90,7 @@
 		],
 		"config": {
 			"learning_rate":1,
-			"weight_decay":0.01,
-			"momentum":0,
-			"batch_size":100,
-			"max_epoch":200,
-			"disp_freq":50,
-			"test_epoch":1
-		}
-	}, 
-
-	{
-		"name": "2-layer mlp with relu lr=10",
-		"model": [
-			{"type":"Linear", "name":"fc1", "in_num":784, "out_num":392, "std":0.01},
-			{"type":"Relu", "name":"af1"},
-			{"type":"Linear", "name":"fc2", "in_num":392, "out_num":98, "std":0.01},
-			{"type":"Relu", "name":"af2"},
-			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
-		],
-		"config": {
-			"learning_rate":10,
-			"weight_decay":0.01,
+			"weight_decay":0.0001,
 			"momentum":0,
 			"batch_size":100,
 			"max_epoch":200,

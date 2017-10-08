@@ -1,6 +1,6 @@
 from utils import LOG_INFO, onehot_encoding, calculate_acc
 import numpy as np
-
+from datetime import datetime
 
 def data_iterator(x, y, batch_size, shuffle=True):
     indx = range(len(x))
