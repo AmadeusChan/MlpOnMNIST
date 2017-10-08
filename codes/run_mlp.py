@@ -65,6 +65,7 @@ if len(sys.argv)>4:
 		
 		for n in range(2*N, 3*N):
 			train_data[n] = train_data[n] + np.random.randn() 
+			train_data[n] = train_data[n] + np.random.randn(1, 784) * 0.01
 		
 		for n in range(3*N, 4*N): 
 			image = np.reshape(train_data[n], (28, 28))
