@@ -48,6 +48,11 @@ def train_net(model, loss, config, inputs, labels, batch_size, disp_freq, loss_f
 
         if iter_counter % disp_freq == 0:
             msg = '  Training iter %d, batch loss %.4f, batch acc %.4f' % (iter_counter, np.mean(loss_list), np.mean(acc_list))
+
+	    outf = file(loss_file, "a")
+	    outf.write(str(np.mean(loss_list)) + " " + str(np.mean(acc_list)) + '\n')
+	    outf.close()
+
             loss_list = []
             acc_list = []
             LOG_INFO(msg)
