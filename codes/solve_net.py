@@ -27,7 +27,7 @@ def train_net(model, loss, config, inputs, labels, batch_size, disp_freq, loss_f
         # forward net
         output = model.forward(input)
         # calculate loss
-        loss_value = loss.forward(output, target)
+        loss_value = loss.forward(output, target) 
         # generate gradient w.r.t loss
         grad = loss.backward(output, target)
         # backward gradient

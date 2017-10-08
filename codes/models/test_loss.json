@@ -10,7 +10,7 @@
 			{"type":"Softmax", "name":"af3"}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.02, 
 			"momentum":0,
 			"batch_size":100,

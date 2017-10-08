@@ -9,7 +9,7 @@
 			{"type":"Linear", "name":"fc3", "in_num":98, "out_num":10, "std":0.01}
 		],
 		"config": {
-			"learning_rate":0.001,
+			"learning_rate":0.1,
 			"weight_decay":0.01,
 			"momentum":0,
 			"batch_size":50,
