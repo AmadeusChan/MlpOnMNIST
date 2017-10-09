@@ -1,3 +1,4 @@
+python run_mlp.py models/test.json results/test_acc.txt results/test_loss.txt
 python run_mlp.py models/test_lr.json results/acc_lr_new.txt results/loss_lr_new.txt
 python run_mlp.py models/test_wd.json results/acc_wd_new.txt results/loss_wd_new.txt
 python run_mlp.py models/test_mm.json results/acc_mm_new.txt results/loss_mm_new.txt
